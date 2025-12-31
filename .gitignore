@@ -1,0 +1,18 @@
+# GitIgnore for prolog-logic-fundamentals
+# Documentation: https://git-scm.com/docs/gitignore
+
+# Temporary or backup files
+*~
+*.temp
+*.tmp
+*.bak
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
