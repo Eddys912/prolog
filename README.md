@@ -36,19 +36,20 @@ This repository contains programming exercises in **Prolog** using the logic pro
 - **Architecture**: x86-64 (64-bit).
 - **SWI-Prolog**: version 10.0.0 or higher.
 
-## 🚀 How to Run the Exercises
+## 🚀 Execution Instructions
 
-### 🖥️ WSL Arch (Recommended)
+### 🖥️ Arch Linux/WSL (Recommended)
 
-1. **Clone the repository** on your machine:
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/edavsys/prolog-logic-fundamentals.git
    ```
-2. **Download and install WSL Arch** in PowerShell:
+   > **Note**: When using Arch Linux natively, proceed to **Step 4**. For Windows environments, complete all steps to install and configure WSL Arch.
+2. **Download and install WSL Arch** (PowerShell):
    ```bash
    wsl --install -d archlinux
    ```
-3. **Restart the machine**. Access archlinux.
+3. **Restart the system** and access Arch Linux.
 4. **Install SWI-Prolog**:
    ```bash
    pacman -Syu
@@ -56,13 +57,13 @@ This repository contains programming exercises in **Prolog** using the logic pro
    ```
 5. **Verify installation**:
    ```bash
-   swipl --version    # e.g. SWI-Prolog version 10.0.0
+   swipl --version    # e.g. SWI-Prolog version 10.0.0 or higher
    ```
-6. **Navigate to the exercises folder**. Adjust the path according to your repository location:
+6. **Navigate to the exercises directory** (adjust path as needed):
    ```bash
    cd /mnt/c/.../prolog-logic-fundamentals/exercises
    ```
-7. **Run the program**:
+7. **Execute exercises**:
    - Access the SWI-Prolog environment:
      ```bash
      swipl
@@ -74,18 +75,18 @@ This repository contains programming exercises in **Prolog** using the logic pro
 
 ### 🌐 OneCompiler (No Installation Required)
 
-Execute code without installation:
+Code execution without local installation:
 
-1. Open **[OneCompiler - Prolog](https://onecompiler.com/prolog)**.
+1. Access **[OneCompiler - Prolog](https://onecompiler.com/prolog)**.
 2. Copy and paste the exercise code.
-3. If the exercise requires user input:
-   - Go to the **STDIN** panel.
+3. For exercises requiring input:
+   - Navigate to the **STDIN** panel.
    - Enter values separated by spaces.
 4. Click **Run**.
 
 ## 📖 Official Documentation
 
-To learn more:
+Additional resources:
 
 - **[SWI-Prolog Documentation](https://www.swi-prolog.org/pldoc/index.html)** - Complete SWI-Prolog manual.
 - **[Learn Prolog Now!](https://www.let.rug.nl/bos/lpn//lpnpage.php)** - Interactive Prolog tutorial.
@@ -97,5 +98,5 @@ To learn more:
     alt="Made with Prolog"
   />
   <br><br>
-  <p>⭐ <strong>If you find this useful, consider leaving a star</strong> ⭐</p>
+  <p>⭐ <strong>Star this repository to show support</strong> ⭐</p>
 </div>
