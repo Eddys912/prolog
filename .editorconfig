@@ -1,4 +1,4 @@
-# EditorConfig for prolog-logic-fundamentals
+# Editorconfig for prolog-logic-fundamentals
 # Documentation: https://editorconfig.org
 
 root = true
@@ -15,6 +15,11 @@ trim_trailing_whitespace = true
 # Prolog files
 [*.pl]
 max_line_length = 100
+
+# Makefile
+[Makefile]
+indent_size = 2
+indent_style = tab
 
 # Markdown files
 [*.md]

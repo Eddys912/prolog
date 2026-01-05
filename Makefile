@@ -1,18 +1,18 @@
 # Makefile for prolog-logic-fundamentals
 # Documentation: https://www.gnu.org/software/make/manual/make.html
-# Usage: make run <path/file.pl>
+# Usage: make run exercises/<file.pl>
 
 # Interpreter
-PROLOG = swipl
+PROLOG       = swipl
 
 # Flags -q: quiet, -t halt: exit after execution
 PROLOG_FLAGS = -q -t halt
 
 # Colors for the terminal
-RED = \033[0;31m
-GREEN = \033[0;32m
-CYAN = \033[0;36m
-NC = \033[0m
+RED          = \033[0;31m
+GREEN        = \033[0;32m
+CYAN         = \033[0;36m
+NC           = \033[0m
 
 .PHONY: run help
 
