@@ -61,17 +61,13 @@ This repository contains programming exercises in **Prolog** using the logic pro
    ```
 6. **Navigate to the exercises directory** (adjust path as needed):
    ```bash
-   cd /mnt/c/.../prolog-logic-fundamentals/exercises
+   cd prolog-logic-fundamentals
    ```
 7. **Execute exercises**:
-   - Access the SWI-Prolog environment:
-     ```bash
-     swipl
-     ```
-   - Load the exercise file:
-     ```prolog
-     ['01_animal_hierarchy.pl'].
-     ```
+   ```bash
+   make help
+   make run exercises/01_animal_hierarchy.pl
+   ```
 
 ### 🌐 OneCompiler (No Installation Required)
 

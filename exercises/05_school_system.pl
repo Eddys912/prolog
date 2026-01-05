@@ -13,19 +13,17 @@
 :- encoding(utf8).
 :- initialization(main).
 
-is_student(sofia).
-is_student(gabriel).
-is_student(enrique).
-is_student(pedro).
 is_student(alejandra).
-is_professor(veronica).
-is_professor(miguel).
+is_student(enrique).
+is_student(gabriel).
+is_student(pedro).
+is_student(sofia).
 is_professor(luis).
-is_professor(maria).
 is_professor(magdalena).
+is_professor(maria).
 is_professor(mario).
-teaches(veronica, physics).
-teaches(miguel, ethics).
+is_professor(miguel).
+is_professor(veronica).
 teaches(luis, calculus).
 teaches(luis, programming).
 teaches(magdalena, ai).
@@ -33,27 +31,25 @@ teaches(magdalena, operationsResearch).
 teaches(magdalena, prolog).
 teaches(mario, algebra).
 teaches(mario, fundamentalsSoftwareEngineering).
-takes_base(sofia, calculus).
-takes_base(pedro, programming).
+teaches(miguel, ethics).
+teaches(veronica, physics).
+takes_base(enrique, physics).
 takes_base(enrique, programming).
+takes_base(gabriel, ai).
 takes_base(gabriel, fundamentalsSoftwareEngineering).
 takes_base(pedro, ai).
-takes_base(gabriel, ai).
-takes_base(enrique, physics).
+takes_base(pedro, programming).
+takes_base(sofia, calculus).
 
 takes(Student, Subject) :- takes_base(Student, Subject).
 takes(Student, physics) :- takes(Student, calculus).
-takes(Student, calculus) :- takes(Student, fundamentalsSoftwareEngineering).
 takes(Student, operationsResearch) :- is_student(Student).
-takes(Student, algebra) :- takes(Student, ethics), \+ takes(Student, programming).
 takes(Student, prolog) :- is_student(Student), \+ takes(Student, ai).
+takes(Student, calculus) :- takes(Student, fundamentalsSoftwareEngineering).
+takes(Student, algebra) :-
+  takes(Student, ethics), \+ takes(Student, programming).
 is_taken_by_all(Subject) :-
-  takes(_, Subject),
-  findall(S, is_student(S), AllStudents),
-  length(AllStudents, TotalStudents),
-  findall(St, takes(St, Subject), StudentsTakingSubject),
-  length(StudentsTakingSubject, CountTaking),
-  TotalStudents == CountTaking.
+  takes(_, Subject), forall(is_student(S), takes(S, Subject)).
 
 show_all_professors :-
   write('List of teachers:'), nl,
@@ -93,7 +89,7 @@ show_alejandra_subjects :-
 show_gabriel_professors :-
   write('List of teachers who teach Gabriel:'), nl,
   forall(
-    (takes(gabriel, Subject), teaches(Prof, Subject)),
+    (teaches(Prof, Subject), takes(gabriel, Subject)),
     format('  - ~w~n', [Prof])
   ).
 
@@ -115,8 +111,10 @@ show_shared_classes :-
 
 show_students_and_subjects :-
   write('List of students and their subjects:'), nl,
+  findall(Student-Subject, takes(Student, Subject), Pairs),
+  sort(Pairs, SortedPairs),
   forall(
-    takes(Student, Subject),
+    member(Student-Subject, SortedPairs),
     format('  - ~w takes ~w~n', [Student, Subject])
   ).
 

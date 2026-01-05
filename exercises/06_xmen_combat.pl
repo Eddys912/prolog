@@ -13,66 +13,66 @@
 :- encoding(utf8).
 :- initialization(main).
 
+is_mutant(archangel).
+is_mutant(captainAmerica).
+is_mutant(charles).
+is_mutant(colossus).
+is_mutant(cyclops).
+is_mutant(deadpool).
+is_mutant(hope).
 is_mutant(jeanGray).
 is_mutant(magneto).
-is_mutant(storm).
-is_mutant(hope).
-is_mutant(volcano).
-is_mutant(colossus).
-is_mutant(titania).
-is_mutant(wolwerine).
-is_mutant(deadpool).
-is_mutant(rogue).
-is_mutant(charles).
-is_mutant(mystique).
-is_mutant(archangel).
-is_mutant(cyclops).
 is_mutant(mole).
-is_mutant(captainAmerica).
+is_mutant(mystique).
+is_mutant(rogue).
+is_mutant(storm).
+is_mutant(titania).
+is_mutant(volcano).
+is_mutant(wolwerine).
 is_robot(sentinel).
-is_human(generalWatson).
 is_human(doctorMoyra).
-level_value(maximum, 4).
-level_value(three, 3).
-level_value(two, 2).
-level_value(one, 1).
+is_human(generalWatson).
 level_value(zero, 0).
+level_value(one, 1).
+level_value(two, 2).
+level_value(three, 3).
+level_value(maximum, 4).
+has_level(archangel, zero).
+has_level(captainAmerica, zero).
+has_level(charles, one).
+has_level(colossus, two).
+has_level(cyclops, zero).
+has_level(deadpool, one).
+has_level(hope, three).
 has_level(jeanGray, maximum).
 has_level(magneto, three).
-has_level(storm, three).
-has_level(hope, three).
-has_level(volcano, three).
-has_level(colossus, two).
-has_level(titania, two).
-has_level(wolwerine, one).
-has_level(deadpool, one).
-has_level(rogue, one).
-has_level(charles, one).
-has_level(mystique, zero).
-has_level(archangel, zero).
-has_level(cyclops, zero).
 has_level(mole, zero).
-has_level(captainAmerica, zero).
+has_level(mystique, zero).
+has_level(rogue, one).
+has_level(storm, three).
+has_level(titania, two).
+has_level(volcano, three).
+has_level(wolwerine, one).
+has_power(archangel, physicalAlteration).
+has_power(captainAmerica, physicalAlteration).
+has_power(charles, extrasensory).
+has_power(colossus, superStrength).
+has_power(cyclops, physicalAlteration).
+has_power(deadpool, extrasensory).
+has_power(hope, matterManipulation).
 has_power(jeanGray, telepathy).
 has_power(jeanGray, matterManipulation).
 has_power(jeanGray, superStrength).
 has_power(jeanGray, extrasensory).
 has_power(jeanGray, physicalAlteration).
 has_power(magneto, matterManipulation).
-has_power(storm, matterManipulation).
-has_power(hope, matterManipulation).
-has_power(volcano, matterManipulation).
-has_power(colossus, superStrength).
-has_power(titania, superStrength).
-has_power(wolwerine, extrasensory).
-has_power(deadpool, extrasensory).
-has_power(rogue, extrasensory).
-has_power(charles, extrasensory).
-has_power(mystique, physicalAlteration).
-has_power(archangel, physicalAlteration).
-has_power(cyclops, physicalAlteration).
 has_power(mole, physicalAlteration).
-has_power(captainAmerica, physicalAlteration).
+has_power(mystique, physicalAlteration).
+has_power(rogue, extrasensory).
+has_power(storm, matterManipulation).
+has_power(titania, superStrength).
+has_power(volcano, matterManipulation).
+has_power(wolwerine, extrasensory).
 has_power(doctorMoyra, none).
 has_power(generalWatson, none).
 
