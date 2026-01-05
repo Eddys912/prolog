@@ -45,10 +45,6 @@ steals(Person, Item) :- is_thief(Person), (is_jewel(Item); is_metal(Item)).
 sells(Person, Item) :- is_thief(Person), is_metal(Item).
 is_not_sold(Item) :- has_color(Item, white), \+ sells(_, Item).
 
-role_name(is_thief, 'thief').
-role_name(is_merchant, 'merchant').
-role_name(is_buyer, 'buyer').
-
 show_all_thieves :-
   write('List of thieves:'), nl,
   forall(
