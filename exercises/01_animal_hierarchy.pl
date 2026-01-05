@@ -24,6 +24,19 @@ is_mammal(X) :- is_canine(X).
 is_mammal(X) :- is_feline(X).
 is_animal(X) :- is_mammal(X).
 
+type_name(is_canine, canine).
+type_name(is_feline, feline).
+type_name(is_mammal, mammal).
+type_name(is_animal, animal).
+
+verify_and_show(Name, Type) :-
+  type_name(Type, TypeName),
+  (
+    call(Type, Name)
+    -> format('[OK] ~w is ~w~n', [Name, TypeName])
+    ; format('[NO] ~w is not ~w~n', [Name, TypeName])
+  ).
+
 show_all_animals :-
   write('List of animals:'), nl,
   forall(
@@ -34,11 +47,10 @@ show_all_animals :-
 main :-
   write('=== Animal Classification ==='), nl, nl,
 
-  write('Lassie verification:'), nl,
-  (is_canine(lassie) -> write('  [OK] is canine') ; write('  [NO] is not canine')), nl,
-  (is_feline(lassie) -> write('  [OK] is feline') ; write('  [NO] is not feline')), nl,
-  (is_mammal(lassie) -> write('  [OK] is mammal') ; write('  [NO] is not mammal')), nl,
-  (is_animal(lassie) -> write('  [OK] is animal') ; write('  [NO] is not animal')), nl,
+  verify_and_show(lassie, is_canine),
+  verify_and_show(lassie, is_feline),
+  verify_and_show(lassie, is_mammal),
+  verify_and_show(lassie, is_animal),
   nl,
 
   show_all_animals, nl.

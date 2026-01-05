@@ -18,41 +18,37 @@ is_pleasant :- \+ is_rainy.
 can_picnic :- is_pleasant.
 can_swim :- is_pleasant.
 
-activity_name(can_picnic, 'have a picnic').
-activity_name(can_swim, 'go swimming').
-weather_name(is_rainy, 'rainy').
-weather_name(is_pleasant, 'pleasant').
+descriptor(is_rainy, 'rainy', weather).
+descriptor(is_pleasant, 'pleasant', weather).
+descriptor(can_picnic, 'have a picnic', activity).
+descriptor(can_swim, 'go swimming', activity).
 
-check_weather(Weather) :-
-  weather_name(Weather, WeatherName),
+verify_descriptor(Descriptor) :-
+  descriptor(Descriptor, Name, Type),
   (
-    call(Weather)
-    -> format('[OK] the weather is ~w~n', [WeatherName])
-    ; format('[NO] the weather is not ~w~n', [WeatherName])
-  ).
-
-check_activity(Activity) :-
-  activity_name(Activity, ActivityName),
-  (
-    call(Activity)
-    -> format('[OK] ~w~n', [ActivityName])
-    ; format('[NO] ~w~n', [ActivityName])
+    call(Descriptor)
+    -> (Type = weather
+        -> format('[OK] the weather is ~w~n', [Name])
+        ;  format('[OK] you can ~w~n', [Name]))
+    ; (Type = weather
+       -> format('[NO] the weather is not ~w~n', [Name])
+       ;  format('[NO] you cannot ~w~n', [Name]))
   ).
 
 show_all_activities :-
   write('List of activities:'), nl,
   forall(
-    activity_name(_, Name),
+    descriptor(_, Name, activity),
     format('  - ~w~n', [Name])
   ).
 
 main :-
   write('=== Climate Activity ==='), nl, nl,
 
-  check_weather(is_rainy),
-  check_weather(is_pleasant),
-  check_activity(can_picnic),
-  check_activity(can_swim),
+  verify_descriptor(is_rainy),
+  verify_descriptor(is_pleasant),
+  verify_descriptor(can_picnic),
+  verify_descriptor(can_swim),
   nl,
 
   show_all_activities, nl.
