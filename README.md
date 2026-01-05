@@ -63,11 +63,10 @@ This repository contains programming exercises in **Prolog** using the logic pro
    ```bash
    cd prolog-logic-fundamentals
    ```
-7. **Execute exercises** use make run followed by the file to run:
+7. **Execute exercises** use make run followed by the path to the file:
    ```bash
-   make help                                         # view available commands
-   make run file=exercises/<file.pl>                 # general syntax
-   make run file=exercises/01_animal_hierarchy.pl    # practical example
+   make help                                        # view available commands
+   make run file=exercises/01_animal_hierarchy.pl   # practical example
    ```
 
 ### 🌐 OneCompiler (No Installation Required)
