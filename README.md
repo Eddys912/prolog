@@ -42,7 +42,7 @@ This repository contains programming exercises in **Prolog** using the logic pro
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/edavsys/prolog-logic-fundamentals.git
+   git clone https://github.com/edavnix/prolog-logic-fundamentals.git
    ```
    > **Note**: When using Arch Linux natively, proceed to **Step 4**. For Windows environments, complete all steps to install and configure WSL Arch.
 2. **Download and install WSL Arch** (PowerShell):
